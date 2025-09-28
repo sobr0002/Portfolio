@@ -13,7 +13,11 @@ public class User {
     private int userId;
     private String firstname;
     private String lastname;
+
+    @Column(nullable = false, unique = true) // Unik til login
     private String email;
+
+    @Column(nullable = false)
     private String password;
 
     // --- Relation: Many Users -> One Role ---
@@ -22,7 +26,7 @@ public class User {
     private Role role;
 
     // --- Relation: One User -> Many Projects ---
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Project> projects = new ArrayList<>();
 
 

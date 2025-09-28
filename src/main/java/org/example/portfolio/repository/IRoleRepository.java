@@ -1,7 +1,11 @@
 package org.example.portfolio.repository;
 
 import org.example.portfolio.model.Role;
+import org.example.portfolio.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IRoleRepository extends JpaRepository<Integer, Role> {
+import java.util.Optional;
+
+public interface IRoleRepository extends JpaRepository<Role, Integer> {
+    Optional<User> findByEmail(String email);
 }

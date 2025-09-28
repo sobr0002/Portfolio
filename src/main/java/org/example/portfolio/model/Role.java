@@ -9,7 +9,7 @@ import java.util.List;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int roleid;
+    private int roleId;
     private String name;
 
     // --- Relation: One Role -> Many Users ---
@@ -32,12 +32,12 @@ public class Role {
         this.name = name;
     }
 
-    public void setRoleid(int roleid) {
-        this.roleid = roleid;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
-    public int getRoleid() {
-        return roleid;
+    public int getRoleId() {
+        return roleId;
     }
 
     public void addUser(User user) {
